@@ -54,11 +54,29 @@
   align-items: center;
   gap: 26px;
 }
+ul.main-ul li {
+  position: relative;
+  transition: 0.3s;
+}
+ul.main-ul li::after{
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  right: 0;
+  background-color: #0F5A85;
+  transition: 0.3s;
+}
+ul.main-ul li:hover::after{
+  width: 100%;
+}
 .main-ul {
   font-size: 15px;
 }
 .main-ul li {
   cursor: pointer;
+  transition: 0.3s;
 }
 .landing-text{
   position: relative;
@@ -77,13 +95,19 @@
 }
 .main-btn{
   background-color: #3EFFFF;
-  font-size: 14px;
+  font-size: 15px;
   color: black;
   border-radius: 7px;
+  font-weight: 700;
   padding: 12px 60px;
   cursor: pointer;
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.17);
-
+transition: 0.3s;
+}
+.main-btn:hover{
+  border-radius: 50%;
+  background-color: #031723;
+  color: white;
 }
 .bg{
   background-image: url('/assets/bg.png')
@@ -359,6 +383,12 @@ footer .foter > div:first-of-type p {
 footer .foter > div:first-of-type ul li {
   background-color: #3EFFFF;
   padding: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+footer .foter > div:first-of-type ul li:hover{
+  border-radius: 50%;
+  transform: scale(1.1);
 }
 footer .foter > div:first-of-type ul li:first-of-type{
   padding: 15px 20px;
@@ -400,6 +430,13 @@ footer .foter > div:nth-of-type(3) ul li{
   margin-bottom: 15px;
   gap: 10px;
   font-size: 14px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  }
+  footer .foter > div:nth-of-type(3) ul li:hover{
+    margin-right: 10px;
+    color: #3EFFFF;
   }
   footer .foter > div:last-of-type {
     align-self: center;
@@ -409,6 +446,13 @@ display: flex;
 align-items: center;
 gap: 20px;
 text-align: center;
+  }
+  footer .foter > div:last-of-type > div > div img{
+transition: 0.3s;
+cursor: pointer;
+  }
+  footer .foter > div:last-of-type > div > div:hover img {
+    transform: scale(1.1);
   }
 
   footer .copyrights{
@@ -424,11 +468,16 @@ text-align: center;
   z-index: 10000;
 }
 @media (max-width: 488px) {
+  .landing{
+    height: fit-content;
+    padding-bottom: 110px;
+  }
   .pop-btn{
     display: block !important;
+    color: white !important;
   }
   .menu-ul{
-    background-color: #0F5A85;
+    background-color: #031723;
     color: white;
         top: 63%;
     left: 3%;
@@ -459,8 +508,9 @@ text-align: center;
   }
   .info{
     flex-wrap: wrap;
-    gap: 10px !important;
-  }
+    gap: 5px!important;
+    padding: 10px 0 !important;
+    }
   .swiper-div{
     width: fit-content;
     padding: 20px;
@@ -472,8 +522,9 @@ text-align: center;
   }
   .main-page .landing h2 {
     width: 100%;
-    font-size: 35px;
-  }
+    font-size: 25px;
+    margin: 100px auto 62px;
+    }
   .aboutus > div > section > section:first-of-type h3{
     width: 100%;
     border-left-width: 0 ;

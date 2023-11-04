@@ -1,9 +1,11 @@
 import { Container } from '@mui/material'
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 function Footer() {
+ 
   return (
-    <footer>
+    <footer >
       <Container>
     <section className='flex foter gap-12 '>
     <div className='ssocial'>

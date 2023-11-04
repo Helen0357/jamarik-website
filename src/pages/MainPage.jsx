@@ -12,6 +12,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 function MainPage() {
   const [dimensions, setDimensions] = useState({ 
     height: window.innerHeight,
@@ -47,13 +50,17 @@ setSlide2(2);
     return _ => {
       window.removeEventListener('resize', handleResize) }
   },[dimensions.width]);
+
+  useEffect(()=> {
+Aos.init({duration: 1000})
+  } , [])
   return (
     <section className='main-page'>
         
         <section className='landing'>
             <Container>
              <NavBar />
-          <section className='text-center landing-text'>
+          <section className='text-center landing-text' data-aos='zoom-in'>
           <h2>منصة ماتريكس للتخليص الجمركي لكافية اجازات الاستيراد</h2>
              <Link to='#' className='main-btn' >ميزات المنصة</Link>
           </section>
@@ -62,10 +69,10 @@ setSlide2(2);
         </section>
 
    <div className='bg'>
-   <section className='aboutus py-16' id='about'>
+   <section className='aboutus py-16 overflow-hidden' id='about'>
         <Container>
-        <section className=' flex items-center justify-between flex-wrap md:flex-nowrap'>
-            <section >
+        <section className=' flex items-center justify-between flex-wrap md:flex-nowrap '>
+            <section data-aos='fade-left'>
                 <h5>حول المنصة</h5>
                 <h3>تعرف اكثر على منصتنا</h3>
                     <h2>شركة خدمات ERP لادارة و تخطيط موارد المؤسسات مع خدمة الربط الالكتروني المعنمد من وزارة المالية</h2>
@@ -75,7 +82,7 @@ setSlide2(2);
 بيعة محفزة تطرح شركة ماتريكس الخيار الأمثل
 مميز ونسب  بيعة محفزة تطرح شركة</p>
             </section>
-            <section className='about-imgs'>
+            <section className='about-imgs' data-aos='fade-right'>
                 <img src='/assets/about1.png' />
             
             </section>
@@ -99,23 +106,23 @@ setSlide2(2);
       
       >
         
-        <SwiperSlide>  <div className='box'>
+        <SwiperSlide>  <div className='box '  data-aos="flip-left">
           <img src='/assets/pic1.png' alt=''  />
           <h3>السرعة</h3>
           <p>ألمبيعات المستهدفة و العمولات , الاقساط و العروض , التامينات و الفاتورة الالكترونيةوالضريبة , نقاط البيع و المتجر الالكتروني البيع و المتجر الالكتروني البيع و المتجر الالكتروني</p>
         </div></SwiperSlide>
-        <SwiperSlide>  <div className='box'>
+        <SwiperSlide>  <div className='box'  data-aos="flip-left">
           <img src='/assets/pic2.png' alt=''  />
           <h3>الخصوصية</h3>
           <p>ألمبيعات المستهدفة و العمولات , الاقساط و العروض , التامينات و الفاتورة الالكترونيةوالضريبة , نقاط البيع و المتجر الالكتروني</p>
         </div></SwiperSlide>
-        <SwiperSlide>  <div className='box'>
+        <SwiperSlide>  <div className='box'  data-aos="flip-left">
           <img src='/assets/pic3.png' alt='' />
           <h3>الاحترافية</h3>
           <p>ألمبيعات المستهدفة و العمولات , الاقساط و العروض , التامينات و الفاتورة الالكترونيةوالضريبة , نقاط البيع و المتجر الالكتروني</p>
         </div></SwiperSlide>
       
-        <SwiperSlide>  <div className='box'>
+        <SwiperSlide>  <div className='box'  data-aos="flip-left">
           <img src='/assets/pic1.png' alt=''  />
           <h3>السرعة</h3>
           <p>ألمبيعات المستهدفة و العمولات , الاقساط و العروض , التامينات و الفاتورة الالكترونيةوالضريبة , نقاط البيع و المتجر الالكتروني البيع و المتجر الالكتروني البيع و المتجر الالكتروني</p>
@@ -143,19 +150,19 @@ setSlide2(2);
         className="mySwiper"
       >
         <SwiperSlide>
-            <div className='swiper-div s1'>
+            <div className='swiper-div s1' data-aos="zoom-in-up">
                 <h2>منصة التخليص الجمركي</h2>
                 <p>تطرح شركة ماتريكس الخيار الامثل في صناعة الترويج و التسويق حيث تتيح لك فرصة عمل قريدة من نوعها بمردود مالي مميز و نسب بيع محفزة تطرح شركة  شركة ماتريكس الخيار الامثل في صناعة مل قريد ماتريكس الخيار الامثل</p>
             </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div className='swiper-div s2'>
+            <div className='swiper-div s2' data-aos="zoom-in-up">
             <h2>منصة التخليص الجمركي</h2>
             <p>تطرح شركة ماتريكس الخيار الامثل في صناعة الترويج و التسويق حيث تتيح لك فرصة عمل قريدة من نوعها بمردود مالي مميز و نسب بيع محفزة تطرح شركة  شركة ماتريكس الخيار الامثل في صناعة مل قريد ماتريكس الخيار الامثل</p>
             </div>
         </SwiperSlide>
         <SwiperSlide>
-            <div className='swiper-div s1'>
+            <div className='swiper-div s1' data-aos="flip-up">
             <h2>منصة التخليص الجمركي</h2>
                 <p>تطرح شركة ماتريكس الخيار الامثل في صناعة الترويج و التسويق حيث تتيح لك فرصة عمل قريدة من نوعها بمردود مالي مميز و نسب بيع محفزة تطرح شركة  شركة ماتريكس الخيار الامثل في صناعة مل قريد ماتريكس الخيار الامثل</p>
             </div>
@@ -168,22 +175,22 @@ setSlide2(2);
 
 
 
-     <section className='counter mt-28 mb-24 relative' id='who'>
+     <section className='counter mt-28 mb-24 relative' id='who' data-aos='fade-up'>
         <Container>
             <section>
-                <div>
+                <div data-aos='zoom-in'>
                     <h2>+150</h2>
                     <span>تاجر</span>
                 </div>
-                <div>
+                <div data-aos='zoom-in'>
                     <h2>+30</h2>
                     <span>اجازات استيراد</span>
                 </div>
-                <div>
+                <div data-aos='zoom-in'>
                     <h2>+30</h2>
                     <span>عدد التحميلات</span>
                 </div>
-                <div>
+                <div data-aos='zoom-in'>
                     <h2>+70</h2>
                     <span>مكتب تخليص جمركي</span>
                 </div>
